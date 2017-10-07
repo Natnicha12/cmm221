@@ -1,55 +1,30 @@
-<!DOCTYPE html>
-<html lang="en"><!--ภาษาหลักที่ใช้ในเว็บไซต์-->
-<head>
-	 <meta charset="UTF-8">
-	 <title>CMM 19</title>
-	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
-	 <link rel="stylesheet"  href="/assets/home.css">
-	</head>
-	<body>
-		<header>
-			<div class="has-text-centered">
-			<img src="/assets/images/logo.png"alt="" width="145" height="auto">
-			</div>
-			<nav class="navbar-tabs">
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">INTERVIEW</a>
-			<a href="#" class="navbar-item">LIVUNG</a>
-			<a href="#" class="navbar-item">SOCLAL</a>
-			<a href="#" class="navbar-item">TRAVEL</a>
-			<a href="#" class="navbar-item">VIDEO</a>
-			<a href="#" class="navbar-item">ACTVITERS</a>
-			<a href="#" class="navbar-item">MAGAZING</a>
-			</nav>
-		</header>
-		<header>
+
+{% extends 'layout/base.twig' %}
+
+
+{% block stylesheet %}
+   <link rel="stylesheet" href="/assets/home.css">
+{% endblock %}
+
+{% block content %}
+	
 
 			<main>
 				<section class="banner">
 					<div class="highlight">
 						<div class="columns">
-							<div class="column highlight-item">
-								bordinsz
+							<div class="column highlight-item" style="background-image: url({{highlight.url }})">
+							<h1>{{ highlight.title }}</h1>
 							</div>
 					</div>
 				</div>
 					<div class="thumbnail">
 					<div class="columns is-marginless">
-					<div class="column thumbnail-item is-paddingless"  style="background-image: url(/assets/images/home/banner/thumbnail-1.jpg);">
-						ชั้น 4 ครุศาสตร์.
+					 {% for item in thumbnail %}
+					<div class="column thumbnail-item is-paddingless"  style="background-image: url({{ item.url }});">
+					  {{ item.title }}
 					</div>
-
-					<div class="column thumbnail-item is-paddingless" style="background-image: url(/assets/images/home/banner/thumbnail-2.jpg);"> 
-						อยู่ปี1.
-					</div>
-
-					<div class="column thumbnail-item is-paddingless" style="background-image: url(/assets/images/home/banner/thumbnail-3.jpg);">" 
-						เครื่องกล.
-					</div>
-
-					<div class="column thumbnail-item is-paddingless" style="background-image: url(/assets/images/home/banner/thumbnail-4.jpg);">
-						พระจอม์.
-					</div>
+					{% endfor %}
 				</div>
 			</div>	
 
@@ -191,7 +166,7 @@
 				</section>
 				
 			</main>
-		</header>
-	</body>
+		{% endblock %}
 
-	</html>
+
+	

@@ -1,5 +1,35 @@
 exports.index = function(req, res) {
-	res.render('home.twig')
+
+	let content = {
+		highlight: {
+			url: '/assets/images/home/banner/highlight.jpg',
+			title: 'bordinsz'
+		},
+		thumbnail: [
+		  {
+		  	url: '/assets/images/home/banner/thumbnail-1.jpg',
+		  	title: 'ชั้น4 ครุศาสตร์'
+
+		   },
+		  {
+		  	url: '/assets/images/home/banner/thumbnail-2.jpg',
+		  	title: 'อยู่ปี1'
+		  	
+		  },
+		  {
+		  	url: '/assets/images/home/banner/thumbnail-3.jpg',
+		  	title: 'เครื่องกล'
+		  	
+		  },
+		  {
+		  	url: '/assets/images/home/banner/thumbnail-4.jpg',
+		  	title: 'พระจอม'
+		  	
+		  }
+		]
+	}
+
+	res.render('home.twig', content)
 }
 
 
